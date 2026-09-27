@@ -1,0 +1,8 @@
+OTCC Assessment Tool v1.8
+
+UX-only / persistence update requested by the assessor:
+- Added top-level Obaid Tips JSON import/export menu.
+- Removed browser localStorage persistence for Obaid Tips.
+- Kept tips separate from assessment response data.
+- Compressed the sidebar filter controls to show more OTCC controls without scrolling the filter panel.
+- Preserved the existing Evidence Library integration and assessment functionality.

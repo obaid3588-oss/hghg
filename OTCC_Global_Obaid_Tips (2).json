@@ -1,0 +1,260 @@
+{
+  "schema_version": "1.1",
+  "type": "otcc-global-obaid-tips-pack",
+  "tool_version": "1.8-compact-filters-json-tips",
+  "exportedAt": "2026-09-27T19:26:38.541Z",
+  "tips": {
+    "2-1-1-1": [
+      {
+        "id": "tip-eeeb9eb4-d77d-43ac-af0c-4fd057df4913",
+        "category": "assessment",
+        "textEn": "Multiple “official” inventories; assets in backup/SIEM/firewall but not inventory; large unknown/blank owner fields; old last-seen dates; no PLC/SIS/network devices.",
+        "textAr": "",
+        "createdAt": "2026-09-27T15:50:20.577Z",
+        "updatedAt": "2026-09-27T15:50:20.577Z"
+      }
+    ],
+    "2-2-1-3": [
+      {
+        "id": "tip-199e6453-e8bb-480a-bca3-7fc390967d7c",
+        "category": "assessment",
+        "textEn": "1.\tOT/ICS hardening standard or configuration standard addressing default credentials; \n2.\tcommissioning/build checklist showing default credentials must be changed; \n3.\tvendor/OEM hardening requirements where default accounts are identified; \n4.\tsystem security configuration records; \n5.\tdeployment/commissioning evidence showing default passwords were changed or default accounts disabled/removed.",
+        "textAr": "",
+        "createdAt": "2026-09-27T15:50:54.068Z",
+        "updatedAt": "2026-09-27T15:50:54.068Z"
+      },
+      {
+        "id": "tip-c1f197c8-031c-49af-b3ac-0140ef397073",
+        "category": "site_visit",
+        "textEn": "Sample of\n1.\tServers(Historian, application server, domain controller)\n2.\tWorkstations(HMI, EWS, operator workstation)\n3.\tNetwork devices(Switches, routers, firewalls)\n4.\tControllers(PLC, RTU, DCS controllers)\n5.\tSafety systems(SIS controllers / engineering stations)\n6.\tSecurity systems(IDS, SIEM collector, security appliance)\n7.\tApplications(SCADA, DCS applications)",
+        "textAr": "",
+        "createdAt": "2026-09-27T15:51:05.015Z",
+        "updatedAt": "2026-09-27T15:51:05.015Z"
+      },
+      {
+        "id": "tip-e38b8540-c5b4-4c65-b01d-d46b292cd72e",
+        "category": "technical_test",
+        "textEn": "Get-LocalUser | Where-Object {$_.SID.Value -match '-500$|-501$|-503$|-504$'} | Select Name,Enabled,SID",
+        "textAr": "",
+        "createdAt": "2026-09-27T15:51:23.548Z",
+        "updatedAt": "2026-09-27T15:51:23.548Z"
+      },
+      {
+        "id": "tip-2cab134d-9df0-4ef9-9b43-534171d66af4",
+        "category": "technical_test",
+        "textEn": "Get-ADUser -Filter * -Properties SID,Enabled | Where-Object {$_.SID.Value -match '-500$|-501$|-502$'} | Select SamAccountName,Enabled,SID",
+        "textAr": "",
+        "createdAt": "2026-09-27T15:51:47.372Z",
+        "updatedAt": "2026-09-27T15:51:47.372Z"
+      }
+    ],
+    "2-3-1-9": [
+      {
+        "id": "tip-d839be1c-ab10-4d51-8f0d-13168466d706",
+        "category": "technical_test",
+        "textEn": "Get-ItemProperty \"HKLM:\\SYSTEM\\CurrentControlSet\\Services\\USBSTOR\" | Select Start",
+        "textAr": "",
+        "createdAt": "2026-09-27T15:52:31.810Z",
+        "updatedAt": "2026-09-27T15:52:31.810Z"
+      },
+      {
+        "id": "tip-e833c58b-7276-4ca4-9331-ae32a80e2c91",
+        "category": "technical_test",
+        "textEn": "or regedit HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\USBSTOR if 3 enable",
+        "textAr": "",
+        "createdAt": "2026-09-27T15:52:43.351Z",
+        "updatedAt": "2026-09-27T15:52:43.351Z"
+      },
+      {
+        "id": "tip-5750ed1d-b193-48e6-a8c2-a1f93f0e6172",
+        "category": "assessment",
+        "textEn": "or example:\n\ncentrally managed endpoint control;\nOT Group Policy;\ncentrally configured USB allow-list.\n\nThen:\n\nverify the central policy;\nverify its scope;\nsample endpoints to confirm application.\nLocal checks are needed where:\n\nThe asset is:\n\nstandalone;\nworkgroup-based;\nnon-Windows;\nvendor-managed;\nnot covered by centralized endpoint control.",
+        "textAr": "",
+        "createdAt": "2026-09-27T15:53:32.575Z",
+        "updatedAt": "2026-09-27T15:53:32.575Z"
+      }
+    ],
+    "2-3-1-13": [
+      {
+        "id": "tip-4f164c64-2a92-4e48-898a-a741a0d56bcc",
+        "category": "evidence",
+        "textEn": "1-SIEM detection/use case\n2- alert/event records for OT ↔ external-host communication;\n3-SOC tickets/cases",
+        "textAr": "",
+        "createdAt": "2026-09-27T15:53:50.644Z",
+        "updatedAt": "2026-09-27T15:53:50.644Z"
+      }
+    ],
+    "2-4-1-1": [
+      {
+        "id": "tip-d7983238-2369-49f7-bb19-7f88462a620a",
+        "category": "evidence",
+        "textEn": "Current OT/ICS network architecture diagram\nFirewall / gateway / routing configuration relevant to the OT boundary",
+        "textAr": "",
+        "createdAt": "2026-09-27T15:58:59.307Z",
+        "updatedAt": "2026-09-27T15:58:59.307Z"
+      },
+      {
+        "id": "tip-35576b8f-701a-46c0-aa71-8efae2d0eaba",
+        "category": "technical_test",
+        "textEn": "in workstation run ipconfig /all and route print",
+        "textAr": "",
+        "createdAt": "2026-09-27T15:59:11.782Z",
+        "updatedAt": "2026-09-27T15:59:11.782Z"
+      },
+      {
+        "id": "tip-0e5d5bac-f850-4622-988f-5f9224321de9",
+        "category": "evidence",
+        "textEn": "Rule Name: OT-HMI-to-DMZ\n\nSource Zone: OT\nSource Address: 10.20.10.0/24\n\nDestination Zone: OT-DMZ\nDestination Address: 10.30.5.20\n\nService:\nTCP/443\n\nAction:\nAllow\n\nLogging:\nEnabled\n\nHit Count:\n12,458",
+        "textAr": "",
+        "createdAt": "2026-09-27T15:59:33.611Z",
+        "updatedAt": "2026-09-27T15:59:33.611Z"
+      }
+    ],
+    "2-4-1-6": [
+      {
+        "id": "tip-03a65d53-0d79-466e-876c-58293c3b072d",
+        "category": "assessment",
+        "textEn": "Network flow matrix\nCommunication matrix\nFirewall rule matrix\nZone/conduit matrix\nInterface control document\nApproved port/protocol matrix",
+        "textAr": "",
+        "createdAt": "2026-09-27T16:00:07.186Z",
+        "updatedAt": "2026-09-27T16:00:07.186Z"
+      },
+      {
+        "id": "tip-56f6c99c-7b31-4b7f-b990-b8ce331503c2",
+        "category": "assessment",
+        "textEn": "Approved ports/protocols/services list",
+        "textAr": "",
+        "createdAt": "2026-09-27T16:00:15.750Z",
+        "updatedAt": "2026-09-27T16:00:15.750Z"
+      },
+      {
+        "id": "tip-7bc805c8-5fda-47bf-84ed-ceb8fe8d2524",
+        "category": "assessment",
+        "textEn": "Look specifically for ANY\n\nOne of the fastest audit checks is to filter/search the inter-zone firewall rules for:\n\nSource = Any\nDestination = Any\nService = Any\nPort = Any\nProtocol = Any\n\nAn ANY rule is not automatically non-compliant.",
+        "textAr": "",
+        "createdAt": "2026-09-27T16:00:24.046Z",
+        "updatedAt": "2026-09-27T16:00:24.046Z"
+      },
+      {
+        "id": "tip-91b525b3-573d-4f9f-b3ec-bca22c38b0b7",
+        "category": "assessment",
+        "textEn": "looking for these ports \n3389\n22\n23\n5900\n445\n5985\n5986\n389\n636\n88",
+        "textAr": "",
+        "createdAt": "2026-09-27T16:00:44.769Z",
+        "updatedAt": "2026-09-27T16:00:44.769Z"
+      }
+    ],
+    "2-4-1-8": [
+      {
+        "id": "tip-a46933db-88a3-441a-9a51-eb42c3a90107",
+        "category": "assessment",
+        "textEn": "How does an OEM/vendor remotely reach OT systems?",
+        "textAr": "",
+        "createdAt": "2026-09-27T16:01:38.128Z",
+        "updatedAt": "2026-09-27T16:01:38.128Z"
+      },
+      {
+        "id": "tip-d986ebe2-4dd9-4c39-8ffa-ce7b37a7bd3a",
+        "category": "assessment",
+        "textEn": "Suppose a legacy OT system still requires SMBv1 because the OEM software cannot currently be upgraded.",
+        "textAr": "",
+        "createdAt": "2026-09-27T16:01:55.129Z",
+        "updatedAt": "2026-09-27T16:01:55.129Z"
+      }
+    ],
+    "2-4-1-13": [
+      {
+        "id": "tip-08871f90-1c51-4b39-9fda-fc8f44799820",
+        "category": "assessment",
+        "textEn": "list system with dmz  that provide services between it and OT",
+        "textAr": "",
+        "createdAt": "2026-09-27T17:38:48.926Z",
+        "updatedAt": "2026-09-27T17:38:48.926Z"
+      }
+    ],
+    "2-4-1-14": [
+      {
+        "id": "tip-3f3e71a0-90f9-4c84-b944-923152c56498",
+        "category": "assessment",
+        "textEn": "uppose the approved matrix says:\n\nSCADA-01 → PLC-01 → TCP 502\n\nOpen the firewall/ACL and verify that the implementation looks reasonably close to:\n\nSource = SCADA-01\nDestination = PLC-01\nService = TCP/502\nAction = Allow\n\nInstead of:\n\nSource = OT subnet\nDestination = PLC subnet\nService = ANY\n\nor even:\n\nSource = OT subnet\nDestination = PLC subnet\nService = TCP/502\n\nwhen only one source actually requires it.",
+        "textAr": "",
+        "createdAt": "2026-09-27T17:49:37.833Z",
+        "updatedAt": "2026-09-27T17:49:37.833Z"
+      },
+      {
+        "id": "tip-55cfe7cf-0e46-406f-a6ce-b10ae22f648a",
+        "category": "assessment",
+        "textEn": "“Show me the approved list of industrial protocols and ports used in this OT environment.”",
+        "textAr": "",
+        "createdAt": "2026-09-27T17:50:10.620Z",
+        "updatedAt": "2026-09-27T17:50:10.620Z"
+      },
+      {
+        "id": "tip-46e7c9ac-fc80-451b-9a6a-ac5c14a5ccd2",
+        "category": "assessment",
+        "textEn": "Pick an industrial rule:\n\nTCP/502 Allow\n\nThen ask:\n\n“Show me the system/application requirement that requires Modbus/TCP through this rule.”\n\nThen:\n\n“Why does this particular source need access to this particular destination?”",
+        "textAr": "",
+        "createdAt": "2026-09-27T17:52:38.496Z",
+        "updatedAt": "2026-09-27T17:52:38.496Z"
+      }
+    ],
+    "2-6-1-1": [
+      {
+        "id": "tip-2e77fcc9-5799-4012-a884-d7a1cfbdc527",
+        "category": "assessment",
+        "textEn": "OT/ICS data should you consider?\n\nExamples include:\n\nNetwork architecture diagrams\nPLC/DCS logic\nConfiguration files\nEngineering files\nHMI/SCADA configurations\nSIS configurations\nFirewall configurations\nAsset inventories\nOT vulnerability reports\nBackup files\nProcess data\nAlarm/event records\nHistorian data\nCredentials-related documentation\nMaintenance documents\nVendor technical documentation\nPrinted engineering drawings",
+        "textAr": "",
+        "createdAt": "2026-09-27T17:56:49.810Z",
+        "updatedAt": "2026-09-27T18:50:46.447Z"
+      },
+      {
+        "id": "tip-a28db73b-d915-4958-987b-1eab59bd5dd8",
+        "category": "assessment",
+        "textEn": "Data → Classification → Required protection → Actual implementation",
+        "textAr": "",
+        "createdAt": "2026-09-27T18:51:12.725Z",
+        "updatedAt": "2026-09-27T18:51:12.725Z"
+      },
+      {
+        "id": "tip-4cd796f2-5ba3-4029-8f19-b73b715f17c1",
+        "category": "assessment",
+        "textEn": "Current OT network architecture\n\nAsk:\n\nWhat is its classification?\nWhere is that classification defined?\nWhat protection does this classification require?\nIs that protection actually applied?\nExample:\n\nOT Network Architecture\n→ Confidential\n→ organization requires restricted access + approved storage + controlled transfer\n→ verify those controls.",
+        "textAr": "",
+        "createdAt": "2026-09-27T18:51:48.840Z",
+        "updatedAt": "2026-09-27T18:52:29.632Z"
+      },
+      {
+        "id": "tip-e2bdd4bb-c022-4a20-b5c3-3d8d70e39712",
+        "category": "assessment",
+        "textEn": "“At rest” means data that is stored somewhere.\n\nExamples:\n\nEngineering files stored on EWS\nPLC backups on backup server\nNetwork diagrams on file server\nOT configurations in document repository\nHistorian database\nRemovable-media copies\nBackup disks\n\nFor sampled data, ask:\n\n“How is this data protected while stored?”\n\nPossible protection mechanisms can include:\n\nAccess permissions\nRestricted folders\nRole-based access\nEncryption at rest\nPassword-protected storage\nDedicated OT repository\nSecure backup storage\nPhysical access restriction to storage media",
+        "textAr": "",
+        "createdAt": "2026-09-27T18:53:37.792Z",
+        "updatedAt": "2026-09-27T18:53:37.792Z"
+      },
+      {
+        "id": "tip-3e868531-212f-443e-b40b-b5a159fdd13f",
+        "category": "assessment",
+        "textEn": "“In transit” means data being transferred between systems, people, networks, or locations.\n\nExamples:\n\nSending PLC configurations to OEM\nTransferring network diagrams\nCopying engineering files between sites\nBackup transfer\nHistorian data transfer\nFile transfer from engineering workstation\nSending OT documentation by email\n\nAsk:\n\n“How can data of this classification be transferred?”",
+        "textAr": "",
+        "createdAt": "2026-09-27T18:55:41.323Z",
+        "updatedAt": "2026-09-27T18:55:41.323Z"
+      },
+      {
+        "id": "tip-faf2f09b-5a8a-4d7e-833c-7f24cb175ddf",
+        "category": "assessment",
+        "textEn": "Please show me how information transmitted within or outside the OT environment is classified and what protection is required for each classification.",
+        "textAr": "",
+        "createdAt": "2026-09-27T19:08:42.641Z",
+        "updatedAt": "2026-09-27T19:08:42.641Z"
+      },
+      {
+        "id": "tip-5f89c704-c8d9-4fa7-a098-d162a6aebd2c",
+        "category": "assessment",
+        "textEn": "Ask the network/firewall administrator for a list of OT communication protocols.\n\nThen check for insecure protocols.\n\nPotentially insecure/plaintext protocols\n\nLook for:\n\nHTTP        TCP/80\nFTP         TCP/21\nTelnet      TCP/23\nTFTP        UDP/69\nSNMPv1/v2   UDP/161\nModbus TCP  TCP/502\nDNP3        TCP/20000\nEtherNet/IP TCP/44818",
+        "textAr": "",
+        "createdAt": "2026-09-27T19:08:47.480Z",
+        "updatedAt": "2026-09-27T19:08:47.480Z"
+      }
+    ]
+  }
+}
